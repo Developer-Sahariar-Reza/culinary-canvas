@@ -1,0 +1,21 @@
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li {
+  list-style: none;
+  margin-right: 20px;
+}
+.active {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #ea7b23;
+}
+.not-active {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #5f5452;
+}
