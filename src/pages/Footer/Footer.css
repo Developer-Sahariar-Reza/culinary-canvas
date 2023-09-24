@@ -1,0 +1,93 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.culinary-canvas-social-media {
+  width: 95%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-media a {
+  color: #ea7b23;
+  font-size: 30px;
+  margin-right: 15px;
+}
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.footer-logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+.footer-logo span {
+  font-family: "Croissant One", cursive;
+  font-weight: bold;
+  font-size: 25px;
+  color: #ea7b23;
+}
+.footer-newsletter div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-newsletter h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.footer-newsletter input {
+  border: 1px solid #ea7b23;
+  padding: 8px;
+  margin-right: 10px;
+}
+.go-button {
+  background-color: #ea7b23;
+  padding: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  transition: all 0.2s ease;
+}
+.go-button:active {
+  transform: scale(0.96);
+}
+
+.culinary-canvas-address-container {
+  border: 1px solid #ea7b23;
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.culinary-canvas-address-container p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #5f5452;
+}
+
+.copyright-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5f5452;
+}

@@ -1,0 +1,3 @@
+.layout-height-adjustment {
+  min-height: calc(100vh - 367px);
+}
