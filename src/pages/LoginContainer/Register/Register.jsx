@@ -7,9 +7,9 @@ import toast from "react-hot-toast";
 
 const Register = () => {
   const [control, setControl] = useState(false);
-  const [loginError, setLoginError] = useState("");
+  const [registerError, setRegisterError] = useState("");
 
-  const { createUser, loginWithGoogle, loginWithGithub } =
+  const { createUser, loginWithGoogle, loginWithGithub, loginWithFacebook } =
     useContext(AuthContext);
 
   const handleRegister = (event) => {
@@ -29,7 +29,7 @@ const Register = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        setLoginError(errorMessage);
+        setRegisterError(errorMessage);
       });
   };
 
@@ -48,10 +48,21 @@ const Register = () => {
     loginWithGithub()
       .then((result) => {
         const loggedUser = result.user;
-        toast.success("Login Successful");
+        toast.success("Registration Successful");
       })
       .catch((error) => {
-        setLoginError(error.message);
+        setRegisterError(error.message);
+      });
+  };
+
+  const handleFacebook = () => {
+    loginWithFacebook()
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Registration Successful");
+      })
+      .catch((error) => {
+        setRegisterError(error.message);
       });
   };
 
@@ -115,7 +126,7 @@ const Register = () => {
         </div>
 
         <div>
-          <p className="error-message">{loginError}</p>
+          <p className="error-message">{registerError}</p>
         </div>
       </form>
 
@@ -123,7 +134,7 @@ const Register = () => {
         <button onClick={handleGoogleLogin}>
           <FaGoogle /> <span>Register with Google</span>
         </button>
-        <button>
+        <button onClick={handleFacebook}>
           <FaFacebook /> <span>Register with Facebook</span>
         </button>
         <button onClick={handleGitHub}>
