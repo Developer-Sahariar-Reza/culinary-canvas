@@ -21,6 +21,24 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    // validate
+
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setRegisterError("Please Add at least one upper Case");
+      return;
+    } else if (!/(?=.*[0-9])/.test(password)) {
+      setRegisterError("Please Add at least one Number");
+      return;
+    } else if (!/(?=.*[!@#$&*])/.test(password)) {
+      setRegisterError("Please Add at least one special character !@#$&*");
+      return;
+    } else if (password.length < 6) {
+      setRegisterError("Please use at least 6 character");
+      return;
+    }
+
+    setRegisterError("");
+
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
@@ -78,12 +96,7 @@ const Register = () => {
 
         <div>
           <label>Photo URL</label>
-          <input
-            type="text"
-            name="photo"
-            placeholder="Your photo url"
-            required
-          />
+          <input type="text" name="photo" placeholder="Your photo url" />
         </div>
 
         <div>
@@ -103,6 +116,7 @@ const Register = () => {
               type="text"
               name="password"
               placeholder="Your Password"
+              title="Use One uppercase, one number, one special character ()and at least 6 character."
               required
             />
           ) : (
