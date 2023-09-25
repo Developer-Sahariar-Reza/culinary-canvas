@@ -40,7 +40,7 @@ const Nav = () => {
         </li>
         <li>
           <NavLink
-            to="/Register"
+            to="/register"
             className={({ isActive }) => (isActive ? "active" : "not-active")}
           >
             Register
