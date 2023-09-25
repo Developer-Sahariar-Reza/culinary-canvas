@@ -1,7 +1,12 @@
 import React from "react";
+import Chef from "../ChefList/Chef";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Chef />
+    </div>
+  );
 };
 
 export default Home;
