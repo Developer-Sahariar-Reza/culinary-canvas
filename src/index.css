@@ -21,3 +21,7 @@
 .common-button:active {
   transform: scale(0.96);
 }
+
+.common-button:hover {
+  background-color: #5f5452;
+}

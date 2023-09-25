@@ -3,6 +3,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top: 2px solid #ea7b23;
 }
 
 .culinary-canvas-social-media {

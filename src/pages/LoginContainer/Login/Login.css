@@ -1,0 +1,81 @@
+.login-container {
+  width: 50%;
+  margin: 50px auto;
+}
+.login-container h1 {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  color: #5f5452;
+  margin-bottom: 35px;
+}
+form div {
+  margin-bottom: 30px;
+}
+form div label {
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #5f5452;
+}
+
+form div input {
+  width: 75%;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 1px solid #ea7b23;
+}
+
+.login-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #5f5452;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.social-media-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-media-login button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5f5452;
+  background-color: #ffffff;
+  border: 1px solid #ea7b23;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-media-login button:active {
+  transform: scale(0.96);
+}
+
+.social-media-login button span {
+  margin-left: 10px;
+}
+
+.log-reg-link p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #5f5452;
+}
+
+.log-reg-link p a {
+  color: #ea7b23;
+}

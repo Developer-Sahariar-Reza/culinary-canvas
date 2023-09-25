@@ -38,6 +38,14 @@ const Nav = () => {
             Contact
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/Register"
+            className={({ isActive }) => (isActive ? "active" : "not-active")}
+          >
+            Register
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
