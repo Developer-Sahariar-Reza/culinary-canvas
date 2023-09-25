@@ -7,6 +7,7 @@ import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/LoginContainer/Login/Login";
 import Register from "../pages/LoginContainer/Register/Register";
+import ChefDetails from "../pages/ChefDetails/ChefDetails";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "chef/:id",
+        element: <ChefDetails />,
       },
     ],
   },

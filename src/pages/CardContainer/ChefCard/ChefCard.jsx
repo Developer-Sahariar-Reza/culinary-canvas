@@ -1,7 +1,7 @@
 import React from "react";
 import "./ChefCard.css";
 import { FaThumbsUp } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ChefCard = ({ chef }) => {
   const {
@@ -12,6 +12,10 @@ const ChefCard = ({ chef }) => {
     total_recipe,
     likes,
   } = chef;
+
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {};
 
   return (
     <div className="chef-card">
@@ -31,9 +35,12 @@ const ChefCard = ({ chef }) => {
         </p>
       </div>
       <div className="view-details">
-        <Link>
-          <button className="common-button">View Details</button>
-        </Link>
+        <button
+          className="common-button"
+          onClick={() => handleViewDetails(_id)}
+        >
+          View Details
+        </button>
       </div>
     </div>
   );

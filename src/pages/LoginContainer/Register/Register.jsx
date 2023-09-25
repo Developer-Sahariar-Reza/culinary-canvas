@@ -1,16 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Register.css";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [control, setControl] = useState(false);
   const [loginError, setLoginError] = useState("");
+
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        toast.success("Registration Successful");
+        form.reset();
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
+
   return (
     <section className="register-container">
       <h1>Registration Form</h1>
 
-      <form>
+      <form onSubmit={handleRegister}>
         <div>
           <label>Name</label>
           <input type="text" name="name" placeholder="Your Name" required />
