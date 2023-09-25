@@ -9,7 +9,7 @@ const Login = () => {
   const [control, setControl] = useState(false);
   const [loginError, setLoginError] = useState("");
 
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, loginWithGoogle } = useContext(AuthContext);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -29,6 +29,18 @@ const Login = () => {
         setLoginError(errorMessage);
       });
   };
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Login Successful");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <section className="login-container">
       <h1>Login</h1>
@@ -79,7 +91,7 @@ const Login = () => {
       </form>
 
       <div className="social-media-login">
-        <button>
+        <button onClick={handleGoogleLogin}>
           <FaGoogle /> <span>Login with Google</span>
         </button>
         <button>

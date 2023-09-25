@@ -9,7 +9,7 @@ const Register = () => {
   const [control, setControl] = useState(false);
   const [loginError, setLoginError] = useState("");
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, loginWithGoogle } = useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -29,6 +29,17 @@ const Register = () => {
       .catch((error) => {
         const errorMessage = error.message;
         setLoginError(errorMessage);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Registration Successful");
+      })
+      .catch((error) => {
+        console.log(error.message);
       });
   };
 
@@ -97,7 +108,7 @@ const Register = () => {
       </form>
 
       <div className="social-media-login">
-        <button>
+        <button onClick={handleGoogleLogin}>
           <FaGoogle /> <span>Register with Google</span>
         </button>
         <button>
