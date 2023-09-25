@@ -1,16 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [control, setControl] = useState(false);
   const [loginError, setLoginError] = useState("");
+
+  const { loginUser } = useContext(AuthContext);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    loginUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Login Successful");
+        form.reset();
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setLoginError(errorMessage);
+      });
+  };
   return (
     <section className="login-container">
       <h1>Login</h1>
 
-      <form>
+      <form onSubmit={handleLogin}>
         <div>
           <label>Email Address</label>
           <input

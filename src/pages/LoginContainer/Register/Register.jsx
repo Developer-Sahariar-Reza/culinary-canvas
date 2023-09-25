@@ -28,7 +28,7 @@ const Register = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
+        setLoginError(errorMessage);
       });
   };
 
