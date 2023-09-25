@@ -9,7 +9,8 @@ const Login = () => {
   const [control, setControl] = useState(false);
   const [loginError, setLoginError] = useState("");
 
-  const { loginUser, loginWithGoogle } = useContext(AuthContext);
+  const { loginUser, loginWithGoogle, loginWithGithub } =
+    useContext(AuthContext);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -37,7 +38,18 @@ const Login = () => {
         toast.success("Login Successful");
       })
       .catch((error) => {
-        console.log(error.message);
+        setLoginError(error.message);
+      });
+  };
+
+  const handleGitHub = () => {
+    loginWithGithub()
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Login Successful");
+      })
+      .catch((error) => {
+        setLoginError(error.message);
       });
   };
 
@@ -97,7 +109,7 @@ const Login = () => {
         <button>
           <FaFacebook /> <span>Login with Facebook</span>
         </button>
-        <button>
+        <button onClick={handleGitHub}>
           <FaGithub /> <span>Login with Github</span>
         </button>
       </div>

@@ -9,7 +9,8 @@ const Register = () => {
   const [control, setControl] = useState(false);
   const [loginError, setLoginError] = useState("");
 
-  const { createUser, loginWithGoogle } = useContext(AuthContext);
+  const { createUser, loginWithGoogle, loginWithGithub } =
+    useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -40,6 +41,17 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error.message);
+      });
+  };
+
+  const handleGitHub = () => {
+    loginWithGithub()
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Login Successful");
+      })
+      .catch((error) => {
+        setLoginError(error.message);
       });
   };
 
@@ -114,7 +126,7 @@ const Register = () => {
         <button>
           <FaFacebook /> <span>Register with Facebook</span>
         </button>
-        <button>
+        <button onClick={handleGitHub}>
           <FaGithub /> <span>Register with Github</span>
         </button>
       </div>
