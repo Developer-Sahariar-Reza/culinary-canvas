@@ -1,0 +1,44 @@
+.container {
+  width: 75%;
+  margin: 100px auto;
+}
+.download {
+  text-align: center;
+}
+.ques-answer-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.topics h2 {
+  margin-bottom: 30px;
+  color: #5f5452;
+  font-size: 40px;
+}
+.topics {
+  margin-bottom: 30px;
+  border: 1px solid #5f5452;
+  padding: 30px;
+}
+.topics p {
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.topics ol {
+  margin-bottom: 15px;
+}
+.topics ol li {
+  margin-bottom: 20px;
+}
+.topics ol li h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.topics ol li ul li {
+  list-style: disc;
+  text-align: justify;
+}
+.topics ol li ul li span {
+  font-weight: 600;
+  text-decoration: underline;
+}

@@ -3,7 +3,7 @@ import "./Recipe.css";
 import LazyLoad from "react-lazy-load";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Recipe = ({ r }) => {
   const { recipe_name, ingredients, cooking_instructions, rating, recipe_img } =
