@@ -9,8 +9,13 @@ const Register = () => {
   const [control, setControl] = useState(false);
   const [registerError, setRegisterError] = useState("");
 
-  const { createUser, loginWithGoogle, loginWithGithub, loginWithFacebook } =
-    useContext(AuthContext);
+  const {
+    createUser,
+    updateUserProfile,
+    loginWithGoogle,
+    loginWithGithub,
+    loginWithFacebook,
+  } = useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -42,6 +47,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+        updateUserProfile(name, photo);
         toast.success("Registration Successful");
         form.reset();
       })

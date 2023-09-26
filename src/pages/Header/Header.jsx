@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import Nav from "../Nav/Nav";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error.message));
+  };
+
   return (
     <header>
       {/* logo and brand className */}
@@ -20,10 +29,23 @@ const Header = () => {
 
       {/* user profile information container  */}
       <div className="profile-container">
-        <p>Profile</p>
-        <Link to="/login">
-          <button className="common-button">Login</button>
-        </Link>
+        {user?.displayName && <p>{user.displayName}</p>}
+        {user?.photoURL && (
+          <img
+            src={user.photoURL}
+            alt="User Profile Picture"
+            className="profile-picture"
+          />
+        )}
+        {user ? (
+          <button className="common-button" onClick={handleLogout}>
+            LogOut
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="common-button">Login</button>
+          </Link>
+        )}
       </div>
     </header>
   );
