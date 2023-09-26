@@ -1,0 +1,15 @@
+.featured-food {
+  margin: 100px;
+}
+.featured-food h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #5f5452;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.feature-image {
+  width: 80%;
+  height: auto;
+}
