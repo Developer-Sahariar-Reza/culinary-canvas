@@ -1,0 +1,25 @@
+.our-client {
+  margin: 100px;
+}
+.our-client h1 {
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: underline;
+  color: #5f5452;
+  margin-bottom: 50px;
+}
+.client {
+  border: 1px solid black;
+  padding: 20px;
+}
+.client h4 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+.client p {
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: justify;
+}
