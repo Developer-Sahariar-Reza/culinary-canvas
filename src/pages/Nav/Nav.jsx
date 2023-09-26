@@ -32,14 +32,6 @@ const Nav = () => {
         </li>
         <li>
           <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "active" : "not-active")}
-          >
-            Contact
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/register"
             className={({ isActive }) => (isActive ? "active" : "not-active")}
           >
