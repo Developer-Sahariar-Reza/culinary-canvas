@@ -6,7 +6,7 @@ const Chef = () => {
   const [chefs, setChefs] = useState([]);
   useEffect(() => {
     fetch(
-      "https://culinary-canvas-server-3ckcwp8xc-developer-sahariar-reza.vercel.app/chefs"
+      "https://culinary-canvas-server-h6wjvp2so-developer-sahariar-reza.vercel.app/chefs"
     )
       .then((res) => res.json())
       .then((data) => setChefs(data))

@@ -2,6 +2,7 @@ import React from "react";
 import "./ChefCard.css";
 import { FaThumbsUp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ chef }) => {
   const {
@@ -16,11 +17,13 @@ const ChefCard = ({ chef }) => {
   return (
     <div className="chef-card">
       <div className="chef-image">
-        <img
-          src={chef_picture}
-          alt={`Picture of ${chef_name}`}
-          title={chef_name}
-        />
+        <LazyLoad height={250} offset={200}>
+          <img
+            src={chef_picture}
+            alt={`Picture of ${chef_name}`}
+            title={chef_name}
+          />
+        </LazyLoad>
       </div>
       <div className="chef-info">
         <h3>{chef_name}</h3>

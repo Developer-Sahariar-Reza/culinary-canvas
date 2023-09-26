@@ -1,0 +1,63 @@
+.chef-details {
+  width: 90%;
+  margin: 100px auto;
+}
+.chef-details-info-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.chef-details-image {
+  width: 100%;
+}
+.chef-details-image img {
+  width: 100%;
+  border: 8px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.chef-details-info h2 {
+  font-size: 40px;
+  color: #ea7b23;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+.chef-details-info p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #5f5452;
+  text-align: justify;
+}
+.recipe-section {
+  margin-top: 80px;
+}
+.recipe-section h3 {
+  font-size: 35px;
+  text-align: center;
+  color: #ea7b23;
+}
+.recipe-container {
+  margin: 50px auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.recipe-go-back a {
+  text-decoration: none;
+}
+.recipe-go-back a button span {
+  margin-right: 10px;
+}
+.recipe-go-back a button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

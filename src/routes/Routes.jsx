@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://culinary-canvas-server-3ckcwp8xc-developer-sahariar-reza.vercel.app/chefs/${params.id}`
+            `https://culinary-canvas-server-h6wjvp2so-developer-sahariar-reza.vercel.app/chefs/${params.id}`
           ),
       },
     ],

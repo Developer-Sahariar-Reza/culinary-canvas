@@ -1,0 +1,38 @@
+.recipe-card {
+  border: 1px solid #5f5452;
+  border-radius: 10px;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+}
+.recipe-image {
+  width: 100%;
+}
+.recipe-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.recipe-heading {
+  font-weight: 600;
+  color: #5f5452;
+}
+.recipe-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.recipe-rating span {
+  font-size: 18px;
+}
+
+.recipe-info h3 {
+  margin-bottom: 20px;
+}
+
+.recipe-info p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
