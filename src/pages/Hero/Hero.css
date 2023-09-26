@@ -1,0 +1,24 @@
+.hero {
+  width: 90%;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.hero-info h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #ea7b23;
+}
+.hero-info h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #5f5452;
+}
+.hero-anime p {
+  border-radius: 10px;
+}
