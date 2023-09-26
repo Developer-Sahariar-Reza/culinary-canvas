@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -11,6 +11,10 @@ const Login = () => {
 
   const { loginUser, loginWithGoogle, loginWithGithub, loginWithFacebook } =
     useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -23,6 +27,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         toast.success("Login Successful");
+        navigate(from, { replace: true });
         form.reset();
       })
       .catch((error) => {
@@ -36,6 +41,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         toast.success("Login Successful");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setLoginError(error.message);
@@ -47,6 +53,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         toast.success("Login Successful");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setLoginError(error.message);
@@ -58,6 +65,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         toast.success("Login Successful");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setLoginError(error.message);

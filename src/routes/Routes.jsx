@@ -8,6 +8,7 @@ import Contact from "../pages/Contact/Contact";
 import Login from "../pages/LoginContainer/Login/Login";
 import Register from "../pages/LoginContainer/Register/Register";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -41,7 +42,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "chef/:id",
-        element: <ChefDetails />,
+        element: (
+          <PrivateRoute>
+            <ChefDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://culinary-canvas-server-3ckcwp8xc-developer-sahariar-reza.vercel.app/chefs/${params.id}`
+          ),
       },
     ],
   },
